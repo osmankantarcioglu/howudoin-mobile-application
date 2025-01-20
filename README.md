@@ -67,4 +67,54 @@ Howudoin is a comprehensive social messaging platform designed to enable real-ti
   - Used to build a robust and scalable RESTful API for the application.
   - Provides seamless integration with MongoDB, security with Spring Security, and support for JSON serialization.
 - **MongoDB**:
-  - A NoSQL database for storing user, friend, group, and
+  - A NoSQL database for storing user, friend, group, and message data in collections.
+- **JWT (JSON Web Tokens)**:
+  - Implemented for authentication to ensure secure communication between the frontend and backend.
+- **Java**:
+  - The primary programming language for backend development.
+
+### **Frontend**
+- **React Native**:
+  - A cross-platform framework for building a mobile application with a consistent UI across devices.
+- **Expo**:
+  - Streamlined development with tools and libraries for fast prototyping and deployment.
+- **React Context API**:
+  - Used for managing authentication and user state across the application.
+- **React Hooks**:
+  - Simplifies state and side-effect management, such as `useState` and `useEffect`.
+- **Fetch API**:
+  - For seamless interaction with backend APIs.
+
+---
+
+## **How the Application Works**
+
+### **1. User Authentication**
+- Users can register and log in using the authentication endpoints. JWT tokens are issued upon successful login and are used for subsequent API calls.
+
+### **2. Friend Management**
+- Users can search for other users and send friend requests. The backend ensures validation and manages the status of these requests.
+- A dedicated screen displays all pending friend requests, which users can accept.
+
+### **3. Group Management**
+- Users can create new groups by providing a group name and adding friends as members.
+- Group details are displayed, including the group name, creation date (stored as a string for simplicity), and a list of members.
+- Users can add more members to a group after its creation.
+
+### **4. Messaging**
+- **One-to-One Chat**:
+  - Users can send and receive messages in real time. Chat history is displayed, sorted from oldest to newest.
+- **Group Chat**:
+  - Users can send messages to all members of a group. The backend ensures that only group members can interact with the group.
+  - Chat history is fetched and displayed in chronological order.
+
+---
+
+## **Installation**
+
+### **Backend**
+1. Clone the repository.
+2. Configure MongoDB and ensure it is running locally or remotely.
+3. Run the Spring Boot application using:
+   ```bash
+   mvn spring-boot:run
